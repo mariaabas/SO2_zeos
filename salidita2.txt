@@ -1,0 +1,43 @@
+bochs -q -f .bochsrc
+========================================================================
+                       Bochs x86 Emulator 2.6.7
+              Built from SVN snapshot on November 2, 2014
+                  Compiled on Feb 17 2015 at 10:17:13
+========================================================================
+Kernel Loaded!    
+(II) Initializing semaphores..OK
+(II) Initializing Backdoor..OK
+Entering user mode...
+
+-->Running 8 Tests: Sbrk test <--
+* Running Test [0] : [testsbrk1] SBRK(0)Check that sbrk(0) returns a value > 0 with the initial @
+-- result OK
+* Running Test [1] : [testsbrk2] SBRK(10)Check that the returned adresses match with the amount of bytes reserved
+-- result OK
+* Running Test [2] : [testsbrk3] SBRK(10)+useCheck that the returned adresses can be used
+If something is wrong next instruction will generate a Page Fault-- result OK
+* Running Test [3] : [testsbrk4] SBRK(10)+forkCheck that the fork gets a copy of this region
+If something is wrong next instruction will generate a Page Fault-- result OK
+* Running Test [4] : [testsbrk5] SBRK(10)+threadCheck that  a thread gets shared memory 
+If something is wrong next instruction will generate a Page Fault-- result OK
+* Running Test [5] : [testsbrk7] SBRK(max)Check maximum memory available
+Allocated a maximum of 716800bytes
+TEST: maximum heap can not be accomplished two times in a row-- result BAD
+* Running Test [6] : [testsbrk8] SBRK(-max)Check that initial address is maintained 
+TEST: releasing more data than reserved does not work as expected-- result BAD
+* Running Test [7] : [testsbrk9] SBRK(1)+SBRK(4096)Check that boundaries are mantained 
+If something is wrong next instruction will generate a Page Fault-- result OK
+
+--> Test final summary: Sbrk test <--
+Test[0]: [testsbrk1] SBRK(0) -- Result: OK
+Test[1]: [testsbrk2] SBRK(10) -- Result: OK
+Test[2]: [testsbrk3] SBRK(10)+use -- Result: OK
+Test[3]: [testsbrk4] SBRK(10)+fork -- Result: OK
+Test[4]: [testsbrk5] SBRK(10)+thread -- Result: OK
+Test[5]: [testsbrk7] SBRK(max) -- Result: BADTEST: maximum heap can not be accomplished two times in a row
+Test[6]: [testsbrk8] SBRK(-max) -- Result: BADTEST: releasing more data than reserved does not work as expected
+Test[7]: [testsbrk9] SBRK(1)+SBRK(4096) -- Result: OK
+Test Results Balance:
+Good tests: 6
+Medium tests: 0
+Bad tests: 2

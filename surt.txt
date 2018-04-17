@@ -1,0 +1,47 @@
+bochs -q -f .bochsrc
+========================================================================
+                       Bochs x86 Emulator 2.6.7
+              Built from SVN snapshot on November 2, 2014
+                  Compiled on Feb 17 2015 at 10:17:13
+========================================================================
+Kernel Loaded!    
+(II) Initializing semaphores..OK
+(II) Initializing Backdoor..OK
+Entering user mode...
+
+-->Running 11 Tests: Read test <--
+* Running Test [0] : [testread1] READ(fd is negative)-- result OK
+* Running Test [1] : [testread3] READ(fd is closed)-- result OK
+* Running Test [2] : [testread4] READ(fd is WRONLY)Permission denied TEST: read returns a negative value, but different from EBADF-- result MEDIUM
+* Running Test [3] : [testread5] READ(read from fd==0  on a null pointer buffer)Bad file number TEST: read returns a negative value, but different from EFAULT-- result MEDIUM
+* Running Test [4] : [testread8] READ(read 1 char from keyboard (fd == 0))USER INTERACTION NEEDED: Enter 1 character 'a'Bad file number TEST: Wrong result in read: not 1 when reading one character-- result BAD
+* Running Test [5] : [testread9] READ(read 4 char from keyboard (fd == 0))USER INTERACTION NEEDED: Enter 4 characters '1234'Bad file number TEST: Wrong result in read: not 4-- result BAD
+* Running Test [6] : [testread19] READ(read from keyboard (fd == 0) more bytes than keyboard buffer capacity)This test must have a circular buffer with a size smaller than 15 characterUSER INTERACTION NEEDED: Enter 15 characters '1234567890qwert'Bad file number TEST: Wrong result in read: not 15-- result BAD
+* Running Test [7] : [testStatsBlocked] READ(get stats of a process blocked by reading keyboard )USER INTERACTION NEEDED: Enter 5 characters '12345' 
+Waiting a context switch...
+
+Current Ready->Run transitions: 1; Remain quantum: 18
+Looping until Context Switch...
+
+Final Ready->Run transitions: 2; Remain quantum: 20; Iterations: 10698
+No such process TEST: Can not get stats of a process blocked reading keyboard -- result BAD
+* Running Test [8] : [testread6] READ(read from fd==0 on buffer in kernel address space)Bad file number TEST: read returns a negative value, but different from EFAULT-- result MEDIUM
+* Running Test [9] : [testread7] READ(read from fd==0 on an buffer outside user address space )Bad file number TEST: read returns a negative value, but different from EFAULT-- result MEDIUM
+* Running Test [10] : [testread2] READ(fd greater than MAX FDs)-- result OK
+
+--> Test final summary: Read test <--
+Test[0]: [testread1] READ(fd is negative) -- Result: OK
+Test[1]: [testread3] READ(fd is closed) -- Result: OK
+Test[2]: [testread4] READ(fd is WRONLY) -- Result: MEDIUM TEST: read returns a negative value, but different from EBADFSKIPPED
+Test[3]: [testread5] READ(read from fd==0  on a null pointer buffer) -- Result: MEDIUM TEST: read returns a negative value, but different from EFAULTSKIPPED
+Test[4]: [testread8] READ(read 1 char from keyboard (fd == 0)) -- Result: BAD TEST: Wrong result in read: not 1 when reading one character
+Test[5]: [testread9] READ(read 4 char from keyboard (fd == 0)) -- Result: BAD TEST: Wrong result in read: not 4
+Test[6]: [testread19] READ(read from keyboard (fd == 0) more bytes than keyboard buffer capacity) -- Result: BAD TEST: Wrong result in read: not 15
+Test[7]: [testStatsBlocked] READ(get stats of a process blocked by reading keyboard ) -- Result: BAD TEST: Can not get stats of a process blocked reading keyboard 
+Test[8]: [testread6] READ(read from fd==0 on buffer in kernel address space) -- Result: MEDIUM TEST: read returns a negative value, but different from EFAULTSKIPPED
+Test[9]: [testread7] READ(read from fd==0 on an buffer outside user address space ) -- Result: MEDIUM TEST: read returns a negative value, but different from EFAULTSKIPPED
+Test[10]: [testread2] READ(fd greater than MAX FDs) -- Result: OK
+Test Results Balance:
+Good tests: 3
+Medium tests: 4
+Bad tests: 4

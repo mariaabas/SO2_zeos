@@ -1,0 +1,313 @@
+bochs -q -f .bochsrc
+========================================================================
+                       Bochs x86 Emulator 2.6.7
+              Built from SVN snapshot on November 2, 2014
+                  Compiled on Feb 17 2015 at 10:17:13
+========================================================================
+Kernel Loaded!    
+(II) Initializing semaphores..OK
+(II) Initializing Backdoor..OK
+Entering user mode...
+
+-->Running 8 Tests: Sbrk test <--
+* Running Test [0] : [testsbrk1] SBRK(0)-- result SKIPPED
+* Running Test [1] : [testsbrk2] SBRK(10)-- result SKIPPED
+* Running Test [2] : [testsbrk3] SBRK(10)+use-- result SKIPPED
+* Running Test [3] : [testsbrk4] SBRK(10)+fork-- result SKIPPED
+* Running Test [4] : [testsbrk5] SBRK(10)+thread-- result SKIPPED
+* Running Test [5] : [testsbrk7] SBRK(max)Check maximum memory available
+0
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+Allocated a maximum of 729088bytes
+4096
+0096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+TEST: maximum heap can not be accomplished two times in a row-- result BAD
+* Running Test [6] : [testsbrk8] SBRK(-max)Check that initial address is maintained 
+0096
+1006
+1006
+0006
+TEST: releasing more data than reserved does not work as expected-- result BAD
+* Running Test [7] : [testsbrk9] SBRK(1)+SBRK(4096)-- result SKIPPED
+
+--> Test final summary: Sbrk test <--
+Test[0]: [testsbrk1] SBRK(0) -- Result: SKIPPED
+Test[1]: [testsbrk2] SBRK(10) -- Result: SKIPPED
+Test[2]: [testsbrk3] SBRK(10)+use -- Result: SKIPPED
+Test[3]: [testsbrk4] SBRK(10)+fork -- Result: SKIPPED
+Test[4]: [testsbrk5] SBRK(10)+thread -- Result: SKIPPED
+Test[5]: [testsbrk7] SBRK(max) -- Result: BADTEST: maximum heap can not be accomplished two times in a row
+Test[6]: [testsbrk8] SBRK(-max) -- Result: BADTEST: releasing more data than reserved does not work as expected
+Test[7]: [testsbrk9] SBRK(1)+SBRK(4096) -- Result: SKIPPED
+Test Results Balance:
+Good tests: 0
+Medium tests: 0
+Bad tests: 2
